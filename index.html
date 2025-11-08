@@ -1,4 +1,4 @@
-l<!DOCTYPE html>
+ط<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,10 +27,11 @@ l<!DOCTYPE html>
     #centerCircle.ripple::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:radial-gradient(circle, rgba(255,0,0,.9) 0%, rgba(180,0,0,.85) 22%, rgba(0,0,0,.8) 44%, rgba(255,0,0,.7) 66%, rgba(0,0,0,.6) 88%, transparent 100%);border-radius:50%;transform:translate(-50%,-50%);animation:denseRipple 1.3s ease-out infinite}
     @keyframes denseRipple{0%{width:0;height:0;opacity:1}100%{width:260px;height:260px;opacity:0}}
 
-    #splash{position:fixed;inset:0;background:url("img4.png") center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;transition:opacity .6s ease}
-    #splash .circle{width:90px;height:90px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px #FFD700}
+    #splash{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;transition:opacity .6s ease}
+    #splash video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+    #splash .circle{width:90px;height:90px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px #FFD700;z-index:1}
     #splash .circle img{width:100%;height:100%;object-fit:cover;display:block}
-    #splash .progress-wrapper{width:90px;height:5px;background:#222;border-radius:3px;overflow:hidden;margin-top:10px}
+    #splash .progress-wrapper{width:90px;height:5px;background:#222;border-radius:3px;overflow:hidden;margin-top:10px;z-index:1}
     #splash .progress-bar{height:100%;width:0%;background:linear-gradient(90deg,#ff8c00,#ffd700,#ff8c00);border-radius:3px;animation:loading 3s linear forwards}
     @keyframes loading{0%{width:0%}100%{width:100%}}
 
@@ -50,6 +51,9 @@ l<!DOCTYPE html>
 
   <!-- Loading/Splash -->
   <div id="splash">
+    <video autoplay muted loop>
+      <source src="vide.mp4" type="video/mp4">
+    </video>
     <div class="circle"><img src="img2.png" alt="Circle"></div>
     <div class="progress-wrapper"><div class="progress-bar"></div></div>
   </div>
